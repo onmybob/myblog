@@ -14,7 +14,6 @@ import { getQueryClient } from '@/helpers/query/getQueryClient';
 import { dehydrate } from '@tanstack/query-core';
 import Hydrate from '@/helpers/query/HydrateClient';
 import { log } from 'console';
-import { useAdminPohoto } from '_ hooks/api/page';
 import { useQuery } from '@tanstack/react-query';
 
 async function Photo() {
@@ -46,7 +45,7 @@ async function Photo() {
 
             {
                 data.map((item) => (
-                    <div>{item.id}</div>
+                    <div key={item.id}>{item.id}</div>
                 ))
             }
         </Box>
