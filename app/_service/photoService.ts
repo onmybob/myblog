@@ -10,9 +10,9 @@ export function queryPhotoList(params: Record<string, any>) {
 }
 export const getPhotos = async () => {
     const data: PhotoType[] = [];
-     const res: any = await request.get(`${process.env.SERVER_BASE_URL}/api/index`, { currentPage: 1 });
+    const res: any = await request.get(`${process.env.SERVER_BASE_URL}/api/index`, { currentPage: 1 });
     //const res: any = await request.get(`/api/index`, { currentPage: 1 });
-    console.log('photoService.....',res);
+    console.log('photoService.....', res);
 
     for (let i = 0; i < res.data.data.length; i++) {
         const p = res.data.data[i];
@@ -32,9 +32,9 @@ export const getPhotos = async () => {
 
 export const getPhotos4 = async () => {
     const data: PhotoType[] = [];
-     const res: any = await request.get(`/api/index`, { currentPage: 1 });
+    const res: any = await request.get(`/api/index`, { currentPage: 1 });
     //const res: any = await request.get(`/api/index`, { currentPage: 1 });
-    console.log('photoService.....',res);
+    console.log('photoService.....', res);
 
     for (let i = 0; i < res.data.data.length; i++) {
         const p = res.data.data[i];
@@ -53,13 +53,13 @@ export const getPhotos4 = async () => {
 };
 
 
-export const getPhotos3 = async() => {
+export const getPhotos3 = async () => {
     const res = await request.get(`/api/index`, { currentPage: 1 })
     return res.data;
 };
 
 
- export const getPhotos2 = async() => {
+export const getPhotos2 = async () => {
     const res = await request.get(`${process.env.SERVER_BASE_URL}/api/index`, { currentPage: 1 })
     return res.data;
 };
