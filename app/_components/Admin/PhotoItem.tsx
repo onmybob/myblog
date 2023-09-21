@@ -9,17 +9,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { Photo } from 'types';
+import { PhotoType } from 'types';
 import HideImage from '@mui/icons-material/HideImage';
 import Image from '@mui/icons-material/Image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const StyledButton = styled(Button)(({ theme, color = 'primary' }) => ({
     ':hover': {
         backgroundColor: '#d5e6f7',
     },
 }));
-
 
 
 function PhotoItem({ list }: { list: any; }) {
@@ -31,16 +30,16 @@ function PhotoItem({ list }: { list: any; }) {
     const showPhotoHandler = (id: number) => {
         hidePhoto(id);
     };
-    const { data: photos, refetch, isLoading } = useQuery({
+    const { data, refetch, isLoading } = useQuery({
         queryKey: GET_PHOTOS_KEY,
         queryFn: getPhotos,
-        initialData: list
+       
     });
 
     return (
         <Grid container spacing={5} style={{ marginTop: 0, marginBottom: 45 }}>
             {isLoading && <div>loading.....</div>}
-            {photos.map((item: Photo, index: any) => (
+            {data?.map((item: PhotoType, index: any) => (
                 <Grid item xs={6} sm={4} md={4} lg={2} key={index} >
                     <Card >
                         <CardMedia

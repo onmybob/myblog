@@ -1,6 +1,6 @@
 
 import ShowTags from '@/components/Gallery/ShowTags';
-import { getQueryClient } from '@/helpers/client/getQueryClient';
+import { getQueryClient } from '@/helpers/query/getQueryClient';
 import alertService from '@/service/alertService';
 import { GET_PHOTOS_KEY, getPhotos, queryPhotoList } from '@/service/photoService';
 import Button from '@mui/material/Button';
@@ -14,7 +14,7 @@ export default async function Home() {
   // await queryClient.prefetchQuery(GET_PHOTOS_KEY, getPhotos);
   // const dehydratedState = dehydrate(queryClient);
 
-  const initialData = await getPhotos();
+  //const initialData = await getPhotos();
 
   //const { data } = await axios.get("https://www.bobjoy.com/api/index?currentPage=1");
 
@@ -35,7 +35,7 @@ export default async function Home() {
       <h1 >asdfs</h1>
       {/* {isLoading && <div>loading.....</div>} */}
 
-      <ShowTags initData={initialData} />
+      {/* <ShowTags initData={initialData} /> */}
 
 
       {/* <Button variant="contained" onClick={testabc}>Hello world</Button> */}

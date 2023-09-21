@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ThemeRegistry from './_components/ThemeRegistry/ThemeRegistry';
-import ReactQueryProvider from './_components/ReactQuery/ReactQueryProvider';
+import ReactQueryProvider from './_helpers/query/provider';
 import { AlertMsg } from './_components/AlertMsg';
 import "./globals.css";
 

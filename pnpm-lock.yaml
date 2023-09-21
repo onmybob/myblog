@@ -23,6 +23,9 @@ dependencies:
   '@mui/material':
     specifier: ^5.14.8
     version: registry.npmmirror.com/@mui/material@5.14.8(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
+  '@tanstack/query-core':
+    specifier: ^4.35.3
+    version: registry.npmmirror.com/@tanstack/query-core@4.35.3
   '@tanstack/react-query':
     specifier: ^4.35.0
     version: registry.npmmirror.com/@tanstack/react-query@4.35.0(react-dom@18.2.0)(react@18.2.0)
@@ -898,6 +901,12 @@ packages:
     resolution: {integrity: sha512-4GMcKQuLZQi6RFBiBZNsLhl+hQGYScRZ5ZoVq8QAzfqz9M7vcGin/2YdSESwl7WaV+Qzsb5CZOAbMBes4lNTnA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tanstack/query-core/-/query-core-4.35.0.tgz}
     name: '@tanstack/query-core'
     version: 4.35.0
+    dev: false
+
+  registry.npmmirror.com/@tanstack/query-core@4.35.3:
+    resolution: {integrity: sha512-PS+WEjd9wzKTyNjjQymvcOe1yg8f3wYc6mD+vb6CKyZAKvu4sIJwryfqfBULITKCla7P9C4l5e9RXePHvZOZeQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tanstack/query-core/-/query-core-4.35.3.tgz}
+    name: '@tanstack/query-core'
+    version: 4.35.3
     dev: false
 
   registry.npmmirror.com/@tanstack/react-query-devtools@4.35.0(@tanstack/react-query@4.35.0)(react-dom@18.2.0)(react@18.2.0):

@@ -37,7 +37,7 @@ const axiosInstance = axios.create({
 
 const request = {
 
-    get: (url: string, params: Record<string, any>) => {
+    get: (url: string, params?: Record<string, any>) => {
         return create('get', url, params);
     },
     post: (url: string, params: Record<string, any>) => {
@@ -48,8 +48,9 @@ const request = {
     }
 
 };
+ 
 
-const create = (method: string, url: string, params: Record<string, any>) => {
+const create = (method: string, url: string, params?: Record<string, any>) => {
     const config = {
         method: method,
         url: url,

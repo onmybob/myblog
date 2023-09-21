@@ -1,10 +1,10 @@
 'use client';
 
-import { getQueryClient } from "@/helpers/client/getQueryClient";
+import { getQueryClient } from "@/helpers/query/getQueryClient";
 import alertService from "@/service/alertService";
 import { GET_PHOTOS_KEY, getPhotos } from "@/service/photoService";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Photo } from "types";
+import { PhotoType } from "types";
 
 
 function ShowTags({ initData }: { initData: any; }) {
@@ -49,7 +49,7 @@ function ShowTags({ initData }: { initData: any; }) {
                 Clear All
             </button>
             {
-                photos?.map((item: Photo, i: any) => (<div key={i}><a href="#" onClick={testabc}>{item.city}</a></div>))
+                photos?.map((item: PhotoType, i: any) => (<div key={i}><a href="#" onClick={testabc}>{item.city}</a></div>))
             }
         </div>
     );

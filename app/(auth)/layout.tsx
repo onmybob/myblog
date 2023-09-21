@@ -9,14 +9,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 import SendIcon from '@mui/icons-material/Send';
 
-import Logo from '../../public/a8krz-ko4pl.svg';
-
-
-export const metadata: Metadata = {
-    title: 'auth',
-    viewport: 'initial-scale=1, width=device-width',
-    description: 'auth',
-};
+  
 
 const drawerWidth = 0;
 
@@ -81,7 +74,6 @@ export default function AuthLayout({
                                 color="inherit"
                                 edge="start"
                             >
-                                <Image priority src={Logo} alt="Sling Academy" height={30} />
                             </IconButton>
                         </Grid>
                         <Grid item xs={6} textAlign={'center'} >
