@@ -17,6 +17,7 @@ import { log } from 'console';
 import { useQuery } from '@tanstack/react-query';
 
 async function Photo() {
+
     // const initialData = await getPhotos();
     //            const list = await request.get(`/api/index`, { currentPage: 1 });
 
@@ -32,22 +33,24 @@ async function Photo() {
 
     // const { data } = useQuery([GET_PHOTOS_KEY], () => getPhotos4);
 
-    const data = await getPhotos()
+    //const data = await getPhotos()
 
     return (
         <Box>
             <PhotoToolbar />
             <h1>V2</h1>
             {/* <PhotoItem list={initialData} /> */}
-            {/* <Grid container spacing={5} style={{ marginTop: 0, marginBottom: 45 }}>
+            <Grid container spacing={5} style={{ marginTop: 0, marginBottom: 45 }}>
                 <PhotoCard />
-            </Grid> */}
+            </Grid>
 
+
+            {/* {flag}
             {
                 data.map((item) => (
                     <div key={item.id}>{item.id}</div>
                 ))
-            }
+            } */}
         </Box>
     );
 }

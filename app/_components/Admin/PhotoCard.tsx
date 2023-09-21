@@ -4,9 +4,8 @@ import { HideImage, Image } from "@mui/icons-material"
 import { PhotoType } from "types"
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography, styled } from "@mui/material"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getPhotos, getPhotos2, getPhotos4, hidePhoto } from "@/service/photoService";
+import { GET_PHOTOS_KEY, getPhotos, getPhotos2, getPhotos4, hidePhoto } from "@/service/photoService";
 import axios from "axios";
-import { useAdminPohoto } from "_ hooks/api/page";
 
 const StyledButton = styled(Button)(({ theme, color = 'primary' }) => ({
     ':hover': {
@@ -16,16 +15,7 @@ const StyledButton = styled(Button)(({ theme, color = 'primary' }) => ({
 
 
 function PhotoCard() {
-    const { isLoading, error, data, isFetching } = useQuery(["getp"], getPhotos4);
-
-
-
-
-    //     const { isLoading, error, data, isFetching } = useQuery(["getp"], () =>
-    //     axios.get(
-    //       "/api/index?currentPage=1"
-    //     ).then((res) => res.data.data.data)
-    //   );
+    const { isLoading, error, data, isFetching } = useQuery(GET_PHOTOS_KEY, getPhotos4);
 
     const queryClient = useQueryClient();
 
