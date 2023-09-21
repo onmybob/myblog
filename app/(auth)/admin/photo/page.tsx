@@ -32,6 +32,7 @@ async function Photo() {
     return (
         <Box>
             <PhotoToolbar />
+            <h1>V2</h1>
             {/* <PhotoItem list={initialData} /> */}
             <Grid container spacing={5} style={{ marginTop: 0, marginBottom: 45 }}>
                 <PhotoCard />
