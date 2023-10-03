@@ -1,4 +1,4 @@
-export interface PhotoType {
+export interface IPhotoType {
     AValue: number;
     city: string;
     photoCountry: string;

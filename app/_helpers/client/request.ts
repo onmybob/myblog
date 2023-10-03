@@ -25,6 +25,7 @@ const codeMessage: Record<string, any> = {
 const header = {
     "Request-ID": process.env.Request_ID || "",
     "Request-Time": (new Date()).valueOf(),
+    'Content-Type': 'application/json',
 };
 
 
@@ -48,7 +49,7 @@ const request = {
     }
 
 };
- 
+
 
 const create = (method: string, url: string, params?: Record<string, any>) => {
     const config = {

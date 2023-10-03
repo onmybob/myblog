@@ -4,7 +4,7 @@ import { getQueryClient } from "@/helpers/query/getQueryClient";
 import alertService from "@/service/alertService";
 import { GET_PHOTOS_KEY, getPhotos } from "@/service/photoService";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { PhotoType } from "types";
+import { IPhotoType } from "types";
 
 
 function ShowTags({ initData }: { initData: any; }) {
@@ -49,7 +49,7 @@ function ShowTags({ initData }: { initData: any; }) {
                 Clear All
             </button>
             {
-                photos?.map((item: PhotoType, i: any) => (<div key={i}><a href="#" onClick={testabc}>{item.city}</a></div>))
+                photos?.map((item: IPhotoType, i: any) => (<div key={i}><a href="#" onClick={testabc}>{item.city}</a></div>))
             }
         </div>
     );

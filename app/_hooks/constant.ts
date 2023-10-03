@@ -1,0 +1,1 @@
+export const USEKEY_ADMIN_PHOTOS: string = 'USE_ADMIN_PHOTOS'
