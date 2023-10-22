@@ -73,9 +73,6 @@ export const adminSearchSubmission =async (prevState:any,formData:FormData) =>{
 }
 export const getPhotosParams = async (params: Record<string, any>) => {
 
-    console.log('params', params);
-    debugger
-    const data: IPhotoType[] = [];
     const res: any = await request.get(`/api/index`, params);
 
     for (let i = 0; i < res.data.data.length; i++) {

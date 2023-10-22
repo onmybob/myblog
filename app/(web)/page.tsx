@@ -53,10 +53,10 @@ export default function Home() {
       <div className="mt-10 mb-5 border-b-[1px] pb-5">
         <div className="mx-auto max-w-screen-2xl">
           <ul className="flex flex-row gap-12   text-gray-600">
-            {categories.map((item) => {
+            {categories.map((item, index) => {
               const Icon = item.icon;
               return (
-                <li className="flex flex-row gap-2">
+                <li className="flex flex-row gap-2" key={index}>
                   <p className="bg-gray-0 px-2 rounded-full text-xs	font-normal flex items-center justify-center">
                     <Icon size={18} />
                   </p>
