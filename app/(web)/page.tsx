@@ -139,7 +139,7 @@ export default function Home() {
                       {...restImageProps}
                     />
 
-                    {photo.caption && (
+                    {photo.key && (
                       <div>
                         <div className="inset-0 absolute  imageCover  opacity-0  hover:opacity-100 ">
                           <div className="absolute bottom-0 text-white px-3 py-3 pt-10  text-lg font-bold w-full text-right">
