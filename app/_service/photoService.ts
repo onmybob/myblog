@@ -54,22 +54,23 @@ export const getPhotos4 = async () => {
 
 export const getPhotosParamsServer = async (params: Record<string, any>) => {
 
-    console.log('params', params);
-    debugger
-    const data: IPhotoType[] = [];
     const res: any = await request.get(`https://www.bobjoy.com/api/index`, params);
 
     for (let i = 0; i < res.data.data.length; i++) {
         res.data.data[i].url = res.data.data[i].url;
         res.data.data[i].src = res.data.data[i].url;
-
         res.data.data[i].caption = 'test'
-
     }
      
     return res
 };
 
+export const adminSearchSubmission =async (prevState:any,formData:FormData) =>{
+    const key = formData.get("key");
+    console.log(key);
+    return {};
+
+}
 export const getPhotosParams = async (params: Record<string, any>) => {
 
     console.log('params', params);
