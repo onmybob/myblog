@@ -8,6 +8,8 @@ const rewrites = async () => {
     ];
 };
 
-const nextConfig = { rewrites };
+
+const nextConfig = { rewrites,  trailingSlash: true,
+};
 
 module.exports = nextConfig;

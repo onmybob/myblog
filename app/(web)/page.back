@@ -1,0 +1,31 @@
+import { getPhotosParamsServer } from "@/service/photoService";
+
+import PhotoCategory from "@/components/Web/PhotoCategory";
+import Gallery from "@/components/Web/Gallery";
+import { InferGetStaticPropsType } from "next";
+
+export async function getStaticProps() {
+  const res = await fetch("https://www.bobjoy.com/api/index?currentPage=2");
+  const posts = await res.json();
+
+  return { props: { posts }, revalidate: 20 };
+}
+async function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  // const list = await getPhotosParamsServer({
+  //   currentPage: 2,
+  // });
+
+  console.log("==================" + posts);
+  return (
+    <>
+      <h1>asdfasdfs</h1>
+      {/* <PhotoCategory />
+
+      <div className="mx-auto max-w-screen-2xl mt-6">
+        <Gallery list={list} />
+      </div> */}
+    </>
+  );
+}
+
+export default Home;
