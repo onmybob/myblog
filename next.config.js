@@ -9,7 +9,14 @@ const rewrites = async () => {
 };
 
 
-const nextConfig = { rewrites,  trailingSlash: true,
-};
+const nextConfig = { rewrites,  trailingSlash: true,};
+
+
+const nextConfig2 = {
+    experimental: {
+      serverActions: true,
+    },
+  };
+  
 
 module.exports = nextConfig;

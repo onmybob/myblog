@@ -13,25 +13,33 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
       <header>
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl	">
-            <a href="#" className="flex items-center mr-10">
-              <Image src="/logo.svg" alt="me" width="100" height="100" />
-            </a>
+            <div>
+              <a href="#" className="flex items-center mr-10">
+                <Image
+                  src="/logo.svg"
+                  alt="me"
+                  width="100"
+                  height="100"
+                  priority={true}
+                />
+              </a>
+            </div>
             <div className="flex items-center">
               <ul className="flex  flex-row space-x-6 text-lg text-[#121212]">
                 <li>
-                  <a href="#">相册</a>
+                  <a href="#">Photo</a>
                 </li>
                 <li className="text-gray-400">/</li>
                 <li>
-                  <a href="#">关于</a>
+                  <a href="#">About</a>
                 </li>
                 <li className="text-gray-400">/</li>
                 <li>
-                  <a href="#">商业活动</a>
+                  <a href="#">Event</a>
                 </li>
                 <li className="text-gray-400">/</li>
                 <li>
-                  <a href="#">联系我</a>
+                  <a href="#">Contact</a>
                 </li>
               </ul>
             </div>

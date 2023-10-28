@@ -7,7 +7,12 @@ html{
 .imageCover {
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,0.55) 1%, rgba(0,0,0,0.55) 9%, rgba(255,255,255,0) 28%, rgba(255,255,255,0) 74%, rgba(0,0,0,0.16572566526610644) 100%);
+}
 
-
+.item {
+	border: 1px solid black;
+	margin: 0 auto;
+	padding: 48px;
+    height: 300px;
 
 }

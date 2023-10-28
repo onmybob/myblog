@@ -1,20 +1,44 @@
 "use client";
 
-import InfiniteScroll from "react-infinite-scroll-component";
+import React, { memo, useState } from "react";
 import PhotoAlbum from "react-photo-album";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-const Gallery = ({ list }: { list: any }) => {
-  const fetchMoreData = () => {};
+const Gallery = memo(function Gallery({ initialItems, fetchData }: any) {
+  console.log("---------------start render-------------");
+
+  const fetching = React.useRef(false);
+  const [pages, setPages] = React.useState(initialItems.data);
+  const [pageNumber, setPageNumber] = useState(2);
+  const [hasNext, setHasNext] = useState(true);
+
+  const hasNexthasNext = React.useRef(true);
+
+  console.log("---------------hasNext-------------" + hasNext);
+  console.log("---------------pageNumber-------------" + pageNumber);
+  console.log("---------------pages-------------" + pages.length);
+
+  async function fetchMoreData() {
+    console.log("---------fetchMoreData-----");
+
+    const data = await fetchData(pageNumber);
+    setHasNext(data.hasNext);
+    hasNexthasNext.current = data.hasNext;
+    setPages([...pages, ...data.data]);
+
+    setPageNumber(pageNumber + 1);
+  }
+
   return (
     <InfiniteScroll
-      dataLength={list?.data.data.length}
+      dataLength={pages.length}
       next={fetchMoreData}
-      hasMore={true}
+      hasMore={hasNexthasNext.current}
       loader={<h4>Loading...</h4>}
     >
       <PhotoAlbum
         layout="columns"
-        photos={list?.data.data}
+        photos={pages}
         columns={3}
         spacing={20}
         renderPhoto={({
@@ -42,7 +66,7 @@ const Gallery = ({ list }: { list: any }) => {
                     <div className="inset-0 absolute  imageCover  opacity-0  hover:opacity-100 ">
                       <div className="absolute bottom-0 text-white px-3 py-3 pt-10  text-lg font-bold w-full text-right">
                         {/* {photo.caption} */}
-                        中国 / 深圳
+                        China / Shenzhen
                       </div>
                     </div>
                   </a>
@@ -54,6 +78,6 @@ const Gallery = ({ list }: { list: any }) => {
       />
     </InfiniteScroll>
   );
-};
+});
 
 export default Gallery;
