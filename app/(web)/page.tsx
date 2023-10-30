@@ -8,7 +8,7 @@ async function fetchData(page = 1) {
   console.log("run fetch data from server...."+page);
 
   const res = await fetch(
-    `https://www.bobjoy.com/api/index?currentPage=${page}&limit=1`,
+    `https://www.bobjoy.com/api/index?currentPage=${page}&limit=20`,
     {
        cache: "no-cache",
      //cache: "force-cache",
