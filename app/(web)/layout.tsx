@@ -15,13 +15,13 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
           <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl	">
             <div>
               <a href="#" className="flex items-center mr-10">
-                <Image
+                {/* <Image
                   src="/logo.svg"
                   alt="me"
                   width="100"
                   height="100"
                   priority={true}
-                />
+                /> */}
               </a>
             </div>
             <div className="flex items-center">

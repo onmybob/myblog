@@ -9,7 +9,9 @@ const rewrites = async () => {
 };
 
 
-const nextConfig = { rewrites,  trailingSlash: true,};
+const nextConfig = { rewrites,  trailingSlash: true,images: {
+  domains: ["qiniu.bobjoy.com"],
+},};
 
 
 const nextConfig2 = {

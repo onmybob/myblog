@@ -3,6 +3,7 @@
 import React, { memo, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Image from "next/image"
 
 const Gallery = memo(function Gallery({ initialItems, fetchData }: any) {
   console.log("---------------start render-------------");
@@ -37,16 +38,16 @@ const Gallery = memo(function Gallery({ initialItems, fetchData }: any) {
       loader={<h4>Loading...</h4>}
     >
       <PhotoAlbum
-        layout="columns"
+        layout="masonry"
         photos={pages}
         columns={3}
         spacing={20}
         renderPhoto={({
-          photo,
-          imageProps: { src, alt, style, ...restImageProps },
+          photo,wrapperStyle,renderDefaultPhoto,
+          imageProps: {  alt, title, sizes, className,src, onClick,style, ...restImageProps },
         }) => (
-          <div>
-            <div className="cursor-pointer relative ">
+          <div style={{ position: "relative", ...wrapperStyle }}>
+          <div className="cursor-pointer relative ">
               {/* <Image
                 src={src}
                 alt={alt}
@@ -60,6 +61,14 @@ const Gallery = memo(function Gallery({ initialItems, fetchData }: any) {
                 style={{ ...style, borderRadius: "2px" }}
                 {...restImageProps}
               />
+              {/* <Image
+        fill
+        src={photo}
+        placeholder={"blurDataURL" in photo ? "blur" : undefined}
+        {...{ alt, title, sizes, className, onClick }}
+      /> */}
+            {renderDefaultPhoto({ wrapped: true })}
+
               {photo && (
                 <div>
                   <a href="http://wwww.baidu.com">
