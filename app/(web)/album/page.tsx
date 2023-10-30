@@ -2,7 +2,7 @@ import { InferGetStaticPropsType } from "next";
 import React from "react";
 
 const Demo = async () => {
-  const res = await fetch("https://www.bobjoy.com/api/index?currentPage=2");
+  const res = await fetch("https://www.bobjoy.com/api/index?currentPage=2&limit=10");
   const posts = await res.json();
 
   return (
