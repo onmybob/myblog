@@ -2,7 +2,7 @@ import { categories } from "_constants";
 
 const PhotoCategory = () => {
   return (
-    <div className="mt-10 mb-5 border-b-[1px]">
+    <div className="mt-10 mb-5 border-b-[1px] px-10">
       <div className="mx-auto max-w-screen-2xl">
         <ul className="flex flex-row gap-12   text-gray-600">
           {categories.map((item, index) => {
