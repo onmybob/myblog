@@ -29,12 +29,14 @@ async function fetchData(page = 1) {
 
 export default async function Home() {
 
+  const data = await fetchData();
+
   return (
     <>
       <PhotoCategory />
       <div className="mx-auto max-w-screen-2xl mt-6">
         {/* <Gallery initialItems={data} fetchData={fetchData} /> */}
-        <MyAlbum fetchData={fetchData}/>
+        <MyAlbum initData={data} fetchData={fetchData}/>
       </div>
     </>
   );
