@@ -33,9 +33,9 @@ export default async function Home() {
 
   return (
     <>
-      <PhotoCategory />
+      <PhotoCategory />       
+       <div className="px-5">
       <div className="mx-auto max-w-screen-2xl mt-6">
-        <div className="px-10">
         {/* <Gallery initialItems={data} fetchData={fetchData} /> */}
         <MyAlbum initData={data} fetchData={fetchData}/>
         </div>
