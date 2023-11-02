@@ -5,7 +5,6 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Image from 'next/image';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
-import type { Metadata } from 'next';
 import React from 'react';
 import SendIcon from '@mui/icons-material/Send';
 
