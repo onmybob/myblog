@@ -3,15 +3,15 @@ import MyAlbum from "@/components/Web/MyAlbum";
 import PhotoCategory from "@/components/Web/PhotoCategory";
 import React from "react";
 
-async function fetchData(page = 1) {
+async function fetchData(type: string, page = 1) {
   "use server";
-  console.log("run fetch data from server...."+page);
+  console.log("run fetch data from server...." + page);
 
   const res = await fetch(
     `https://www.bobjoy.com/api/index?currentPage=${page}&limit=10`,
     {
-       cache: "no-cache",
-     //cache: "force-cache",
+      cache: "no-cache",
+      //cache: "force-cache",
       // next: {
       //   revalidate: 60 *2,
       // },
@@ -25,19 +25,17 @@ async function fetchData(page = 1) {
 
   return data.data;
 }
- 
 
 export default async function Home() {
-
-  const data = await fetchData();
+  const data = await fetchData("");
 
   return (
     <>
-      <PhotoCategory />       
-       <div className="px-5">
-      <div className="mx-auto max-w-screen-2xl mt-6">
-        {/* <Gallery initialItems={data} fetchData={fetchData} /> */}
-        <MyAlbum initData={data} fetchData={fetchData}/>
+      <PhotoCategory />
+      <div className="px-5">
+        <div className="mx-auto max-w-screen-2xl mt-6">
+          {/* <Gallery initialItems={data} fetchData={fetchData} /> */}
+          <MyAlbum initData={data} fetchData={fetchData} />
         </div>
       </div>
     </>

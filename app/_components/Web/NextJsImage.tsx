@@ -8,7 +8,14 @@ export default function NextJsImage({
   wrapperStyle,
 }: RenderPhotoProps) {
   return (
-    <div style={{ ...wrapperStyle, position: "relative" }}>
+    <div
+      style={{
+        ...wrapperStyle,
+        position: "relative",
+        overflowX: "hidden",
+        overflowY: "hidden",
+      }}
+    >
       <div>
         <BlurImage
           image={photo}

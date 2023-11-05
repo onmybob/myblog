@@ -1,3 +1,7 @@
+"use client";
+
+import { photoNoDataStore } from "_store/PhotoNoData";
+
 export default function WebLayout({ children }: { children: React.ReactNode }) {
   return (
     <>

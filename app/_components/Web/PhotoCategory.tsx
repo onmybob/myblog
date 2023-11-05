@@ -1,6 +1,13 @@
+"use client";
+
 import { categories } from "_constants";
+import { usePathname } from "next/navigation";
 
 const PhotoCategory = () => {
+  const pathname = usePathname();
+  let type = pathname.substring(0, pathname.lastIndexOf("/"));
+  type = type.substring(type.lastIndexOf("/") + 1);
+
   return (
     <div className="mt-10 mb-5 border-b-[1px] px-5">
       <div className="mx-auto max-w-screen-2xl">
@@ -9,10 +16,10 @@ const PhotoCategory = () => {
             const Icon = item.icon;
             return (
               <li
-                className={`flex flex-row gap-2 pb-5 pr-2${
-                  index === 1
-                    ? " font-bold  text-black border-b-[3px] border-black"
-                    : ""
+                className={`flex flex-row gap-2  border-b-[3px] pb-5 pr-2${
+                  item.tag === type
+                    ? " text-black border-black"
+                    : " border-white"
                 }`}
                 key={index}
               >

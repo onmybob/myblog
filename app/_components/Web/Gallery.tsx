@@ -3,7 +3,7 @@
 import React, { memo, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Image from "next/image"
+import Image from "next/image";
 
 const Gallery = memo(function Gallery({ initialItems, fetchData }: any) {
   console.log("---------------start render-------------");
@@ -43,31 +43,29 @@ const Gallery = memo(function Gallery({ initialItems, fetchData }: any) {
         columns={3}
         spacing={20}
         renderPhoto={({
-          photo,wrapperStyle,renderDefaultPhoto,
-          imageProps: {  alt, title, sizes, className,src, onClick,style, ...restImageProps },
+          photo,
+          wrapperStyle,
+          renderDefaultPhoto,
+          imageProps: {
+            alt,
+            title,
+            sizes,
+            className,
+            src,
+            onClick,
+            style,
+            ...restImageProps
+          },
         }) => (
           <div style={{ position: "relative", ...wrapperStyle }}>
-          <div className="cursor-pointer relative ">
-              {/* <Image
-                src={src}
-                alt={alt}
-                style={{ ...style, borderRadius: "2px" }}
-                {...restImageProps}
-              /> */}
-
+            <div className="cursor-pointer relative ">
               <img
                 src={src}
                 alt={alt}
                 style={{ ...style, borderRadius: "2px" }}
                 {...restImageProps}
               />
-              {/* <Image
-        fill
-        src={photo}
-        placeholder={"blurDataURL" in photo ? "blur" : undefined}
-        {...{ alt, title, sizes, className, onClick }}
-      /> */}
-            {renderDefaultPhoto({ wrapped: true })}
+              {renderDefaultPhoto({ wrapped: true })}
 
               {photo && (
                 <div>

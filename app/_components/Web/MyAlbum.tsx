@@ -5,19 +5,24 @@ import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import PhotoAlbum from "react-photo-album";
 import NextJsImage from "./NextJsImage";
+import { usePathname } from "next/navigation";
 
 const MyAlbum = ({ initData, fetchData }: any) => {
   const [photos, setPhotos] = React.useState([initData.data]);
   const [hasNext, setHasNext] = React.useState(initData.hasNext);
 
+  const pathname = usePathname();
+  let type = pathname.substring(0, pathname.lastIndexOf("/"));
+  type = type.substring(type.lastIndexOf("/") + 1);
+
   async function fetchMoreData() {
-    const data = await fetchData(photos.length + 1);
+    const data = await fetchData(type, photos.length + 1);
     setHasNext(data.hasNext);
     setPhotos([...photos, data.data]);
   }
   return (
     <InfiniteScroll
-      className=""
+      className="overflow-hidden"
       dataLength={photos.length}
       next={fetchMoreData}
       hasMore={hasNext}

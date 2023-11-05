@@ -5,6 +5,13 @@ import { IoDiamond } from "react-icons/io5";
 
 export const categories = [
     {
+        id: 99,
+        label: "全部",
+        icon: TbBeach,
+        tag: "All",
+        description: "This property is close to the beach!",
+    },
+    {
         id: 1,
         label: "自然景观",
         icon: TbBeach,
