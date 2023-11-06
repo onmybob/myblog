@@ -83,6 +83,9 @@ dependencies:
   typescript:
     specifier: 5.2.2
     version: registry.npmmirror.com/typescript@5.2.2
+  yet-another-react-lightbox:
+    specifier: ^3.15.0
+    version: registry.npmmirror.com/yet-another-react-lightbox@3.15.0(react-dom@18.2.0)(react@18.2.0)
   zustand:
     specifier: ^4.4.1
     version: registry.npmmirror.com/zustand@4.4.1(@types/react@18.2.21)(react@18.2.0)
@@ -4355,6 +4358,20 @@ packages:
     name: yaml
     version: 2.3.2
     engines: {node: '>= 14'}
+
+  registry.npmmirror.com/yet-another-react-lightbox@3.15.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-htinzxfQ7gb9csi7C+FXrBv4o6SjvbWZ3GN/X33HTGRd4dsgTdrDCIEAqAIRF7AZr35cFD5T65p5eccuNrX75w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.15.0.tgz}
+    id: registry.npmmirror.com/yet-another-react-lightbox/3.15.0
+    name: yet-another-react-lightbox
+    version: 3.15.0
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: registry.npmmirror.com/react@18.2.0
+      react-dom: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+    dev: false
 
   registry.npmmirror.com/yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/yocto-queue/-/yocto-queue-0.1.0.tgz}

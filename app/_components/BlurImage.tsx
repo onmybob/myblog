@@ -8,6 +8,7 @@ export default function BlurImage({ image }: any) {
     <Image
       alt=""
       src={image}
+      priority
       className={`
                 duration-700 ease-in-out 
                 ${
@@ -15,7 +16,7 @@ export default function BlurImage({ image }: any) {
                     ? "scale-110 blur-xl grayscale"
                     : "scale-100 blur-0 grayscale-0"
                 })`}
-      onLoadingComplete={() => setLoading(false)}
+      onLoad={() => setLoading(false)}
     />
   );
 }

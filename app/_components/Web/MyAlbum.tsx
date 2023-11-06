@@ -6,6 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import PhotoAlbum from "react-photo-album";
 import NextJsImage from "./NextJsImage";
 import { usePathname } from "next/navigation";
+import Lightbox from "yet-another-react-lightbox";
 
 const MyAlbum = ({ initData, fetchData }: any) => {
   const [photos, setPhotos] = React.useState([initData.data]);
@@ -20,31 +21,47 @@ const MyAlbum = ({ initData, fetchData }: any) => {
     setHasNext(data.hasNext);
     setPhotos([...photos, data.data]);
   }
+
+  const [index, setIndex] = React.useState(-1);
+
+  const data = photos.flatMap((items) => items);
   return (
-    <InfiniteScroll
-      className="overflow-hidden"
-      dataLength={photos.length}
-      next={fetchMoreData}
-      hasMore={hasNext}
-      loader={
-        <div className="text-center flex items-center justify-center transition-opacity">
-          <Image src="/loading2.gif" alt="loading" width="100" height="100" />
-        </div>
-      }
-    >
-      <PhotoAlbum
-        layout="rows"
-        photos={photos.flatMap((items) => items)}
-        spacing={10}
-        renderPhoto={NextJsImage}
-        columns={(containerWidth) => {
-          if (containerWidth < 400) return 2;
-          if (containerWidth < 800) return 3;
-          return 3;
-        }}
-        componentsProps={{ containerProps: { style: { paddingBottom: 20 } } }}
+    <>
+      <InfiniteScroll
+        className="overflow-hidden"
+        dataLength={photos.length}
+        next={fetchMoreData}
+        hasMore={hasNext}
+        loader={
+          <div className="text-center flex items-center justify-center transition-opacity">
+            <Image src="/loading2.gif" alt="loading" width="100" height="100" />
+          </div>
+        }
+      >
+        <PhotoAlbum
+          layout="rows"
+          photos={data}
+          spacing={10}
+          targetRowHeight={600}
+          onClick={({ index }) => {
+            alert("s");
+          }}
+          renderPhoto={NextJsImage}
+          columns={(containerWidth) => {
+            if (containerWidth < 400) return 2;
+            if (containerWidth < 800) return 3;
+            return 3;
+          }}
+          componentsProps={{ containerProps: { style: { paddingBottom: 20 } } }}
+        />
+      </InfiniteScroll>
+      <Lightbox
+        index={index}
+        slides={data}
+        open={index >= 0}
+        close={() => setIndex(-1)}
       />
-    </InfiniteScroll>
+    </>
   );
 };
 
