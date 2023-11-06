@@ -43,16 +43,8 @@ const MyAlbum = ({ initData, fetchData }: any) => {
           photos={data}
           spacing={10}
           targetRowHeight={600}
-          onClick={({ index }) => {
-            console.log(index);
-            alert("s");
-          }}
+          onClick={({ index }) => setIndex(index)}
           renderPhoto={NextJsImage}
-          columns={(containerWidth) => {
-            if (containerWidth < 400) return 2;
-            if (containerWidth < 800) return 3;
-            return 3;
-          }}
           componentsProps={{ containerProps: { style: { paddingBottom: 20 } } }}
         />
       </InfiniteScroll>
