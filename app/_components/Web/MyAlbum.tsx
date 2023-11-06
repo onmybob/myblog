@@ -44,6 +44,7 @@ const MyAlbum = ({ initData, fetchData }: any) => {
           spacing={10}
           targetRowHeight={600}
           onClick={({ index }) => {
+            console.log(index);
             alert("s");
           }}
           renderPhoto={NextJsImage}
