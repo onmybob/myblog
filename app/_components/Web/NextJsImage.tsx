@@ -26,11 +26,11 @@ export default function NextJsImage({
           {...{ alt, title, sizes, className }}
           priority
           className={`
-                duration-700 ease-in-out 
+                duration-500	 ease-in-out 
                 ${
                   isLoading
-                    ? "scale-110 blur-xl grayscale"
-                    : "scale-100 blur-0 grayscale-0"
+                    ? "scale-100 blur-lg grayscale"
+                    : "scale-100 blur-0  grayscale-0"
                 })`}
           onLoad={() => setLoading(false)}
         />

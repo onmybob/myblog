@@ -1,8 +1,15 @@
 "use client";
 
-import { photoNoDataStore } from "_store/PhotoNoData";
+import PageProgress from "@/components/PageProgress";
+import { headSearchStore, useStore2 } from "_store/headSearch";
+import { useRouter } from "next/navigation";
 
 export default function WebLayout({ children }: { children: React.ReactNode }) {
+  const { key, setKey } = headSearchStore();
+  const searchKey = () => {
+    const route = useRouter();
+    route.push(`?key=${key}`);
+  };
   return (
     <>
       <header>
@@ -62,11 +69,14 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
                   <input
                     type="search"
                     id="search"
+                    value={key}
+                    onChange={(e) => setKey(e.target.value)}
                     className="border-none   block w-full p-2 pl-10 focus:outline-none  text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
                     placeholder="Search"
                   />
                   <button
                     type="button"
+                    onClick={searchKey}
                     className="absolute top-0 right-0 p-2.5 h-full  font-medium text-white bg-gray-600 rounded-r-lg border border-gray-600 hover:bg-gray-600   focus:outline-none "
                   >
                     <svg
@@ -91,10 +101,11 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
           </div>
         </nav>
       </header>
+      <PageProgress />
       {children}
       <footer>
         <div className=" flex text-center py-14 justify-center text-gray-600 border-t-[1px] mt-10">
-          Designed & Made By Bob Wang
+          Designed & Made By Bob Wang {key}
         </div>
       </footer>
     </>

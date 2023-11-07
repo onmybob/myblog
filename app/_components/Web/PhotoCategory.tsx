@@ -8,6 +8,10 @@ const PhotoCategory = () => {
   let type = pathname.substring(0, pathname.lastIndexOf("/"));
   type = type.substring(type.lastIndexOf("/") + 1);
 
+  if (type == "") {
+    type = "All";
+  }
+
   return (
     <div className="mt-10 mb-5 border-b-[1px] px-5">
       <div className="mx-auto max-w-screen-2xl">
